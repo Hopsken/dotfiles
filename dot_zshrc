@@ -1,107 +1,15 @@
-#####################
-# ZINIT             #
-#####################
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
+# Interactive Shell Configuration
 
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+# 1. Load secret environment variables
+[[ -f "$HOME/.config/zsh/.secret" ]] && source "$HOME/.config/zsh/.secret"
 
-#####################
-# ZINIT addons      #
-#####################
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-bin-gem-node
-
-#####################
-# PROMPT            #
-#####################
-PS1=""
-PURE_PROMPT_SYMBOL="🏂"
-zinit ice wait"!0" lucid nocd \
-    pick"async.zsh" src"pure.zsh" \
-    atload'prompt_pure_precmd'
-zinit load sindresorhus/pure
-
-########################
-# Plugins              #
-########################
-
-# IMPORTANT:
-# Ohmyzsh plugins and libs are loaded first as some these sets some defaults which are required later on.
-# Otherwise something will look messed up
-
-# Explanation:
-# 1. Loading tmux first, to prevent jumps when tmux is loaded after .zshrc
-# 2. History plugin is loaded early (as it has some defaults) to prevent empty history stack for other plugins
-
-zinit light-mode for \
-    atinit" ZSH_TMUX_FIXTERM=false ZSH_TMUX_AUTOSTART_ONCE=true" \
-    OMZP::tmux \
-    atinit"HIST_STAMPS=dd.mm.yyyy" \
-    OMZL::history.zsh
-
-zinit wait lucid for \
-    OMZL::functions.zsh \
-    OMZL::clipboard.zsh \
-    OMZL::compfix.zsh \
-    OMZL::completion.zsh \
-    OMZL::correction.zsh \
-    atload" alias ..='cd ..' \
-           alias ls='ls --color=auto'" \
-    OMZL::directories.zsh \
-    OMZL::git.zsh \
-    OMZL::grep.zsh \
-    OMZL::key-bindings.zsh
-
-#####################
-# PLUGINS           #
-#####################
-
-zinit wait lucid light-mode for \
-    atload" alias gcd='gco dev' alias gfh='git commit -a --fixup HEAD'" \
-    OMZP::git \
-    OMZP::command-not-found \
-    OMZP::kubectl \
-    MichaelAquilina/zsh-you-should-use \
-    hlissner/zsh-autopair
-
-zinit wait lucid light-mode for \
-    atinit"ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" \
-    atload"_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions \
-    atinit" typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100; zpcompinit; zpcdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
-    blockf \
-    zsh-users/zsh-completions \
-    atinit" zstyle :history-search-multi-word page-size 10" \
-    zdharma-continuum/history-search-multi-word
-
-#####################
-# PROGRAMS          #
-#####################
-
-zinit wait lucid light-mode for \
-    OMZP::fzf \
-    atload" zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color \$realpath'" \
-    Aloxaf/fzf-tab
-
-zinit wait lucid light-mode for \
-    as"command" pick"zsh-bench" \
-    romkatv/zsh-bench \
-    as"command" from"gh-r" \
-    atclone"./zoxide init zsh > init.zsh" \
-    atpull"%atclone" \
-    atload" zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color \$realpath'"\
-    src"init.zsh" nocompile'!' \
-    ajeetdsouza/zoxide
-
-# Source aliases
-if [ -f ~/.alias ]; then
-    . ~/.alias
+# 2. Load modular configurations
+if [[ -d "$HOME/.config/zsh/rc.d" ]]; then
+  for conf in "$HOME/.config/zsh/rc.d/"*.zsh(N); do
+    source "$conf"
+  done
+  unset conf
 fi
 
-alias t=tmux
+# 3. Load machine-local overrides (not managed by chezmoi)
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

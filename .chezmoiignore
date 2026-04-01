@@ -1,0 +1,9 @@
+.config/zsh/.secret
+README.md
+README.zh-CN.md
+bootstrap.sh
+Brewfile
+bin
+CLAUDE.md
+.zshrc.local
+.DS_Store
