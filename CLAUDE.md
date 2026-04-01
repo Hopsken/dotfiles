@@ -22,19 +22,7 @@ Modular structure loaded by `dot_zshrc` → `dot_config/zsh/rc.d/` in numeric or
 
 Secrets (API keys) go in `~/.config/zsh/.secret` — sourced by `dot_zshrc` but excluded from this repo.
 
-### Claude Code Configuration
-
-`dot_claude/` maps to `~/.claude/`:
-- `settings.json` — enabled MCP plugins and tool permissions
-- `executable_statusline.sh` — custom status line (model, dir, git branch)
-
 ### Key Managed Configs
 
 - `dot_config/starship.toml` — Starship prompt (nerd font, multi-language)
 - `ghostty_config` — Ghostty terminal (font: Maple Mono NF CN, theme: system light/dark)
-- `dot_gitignore_global` — Global git ignores (macOS, editors, languages)
-- `Brewfile` — All Homebrew packages, casks, and taps
-
-### Bootstrap Script
-
-`bootstrap.sh` is idempotent and handles full machine setup: Homebrew → Brewfile → chezmoi init → Git config → fnm + pnpm → AI tools (Claude Code, Gemini CLI, Codex) → Bun → uv.
