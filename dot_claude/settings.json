@@ -16,7 +16,8 @@
     "explanatory-output-style@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "nowledge-mem@nowledge-community": true
   },
   "voiceEnabled": false,
   "autoMemoryEnabled": true,
@@ -27,6 +28,12 @@
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "nowledge-community": {
+      "source": {
+        "source": "github",
+        "repo": "nowledge-co/community"
       }
     }
   }
