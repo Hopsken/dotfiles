@@ -1,9 +1,9 @@
 {
+  "model": "opusplan",
   "statusLine": {
     "type": "command",
     "command": "$HOME/.claude/statusline.sh"
   },
-  "model": "opusplan",
   "enabledPlugins": {
     "ralph-loop@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
@@ -15,10 +15,19 @@
     "claude-md-management@claude-plugins-official": true,
     "explanatory-output-style@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true
+    "skill-creator@claude-plugins-official": true,
+    "codex@openai-codex": true
   },
   "voiceEnabled": false,
   "autoMemoryEnabled": true,
   "autoDreamEnabled": true,
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  }
 }

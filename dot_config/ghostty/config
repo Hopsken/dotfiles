@@ -9,7 +9,7 @@ background-blur-radius = 128
 window-padding-x = 8
 window-padding-y = 8
 macos-titlebar-style = transparent
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, sudo, ssh-terminfo, ssh-env
 
 # --- Window Behavior ---
 window-save-state = always
