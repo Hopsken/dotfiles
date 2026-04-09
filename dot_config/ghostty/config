@@ -3,7 +3,7 @@ font-family = "Maple Mono NF CN"
 font-size = 20
 
 # --- Appearance & Theme ---
-theme = Xcode Dark hc
+theme = token-dark
 macos-icon = xray
 background-opacity = 0.85
 background-blur-radius = 40
