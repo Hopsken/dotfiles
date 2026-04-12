@@ -40,7 +40,7 @@ shell-integration = zsh
 notify-on-command-finish = always
 
 # --- Performance ---
-scrollback-limit = 100000
+scrollback-limit = 25000000
 
 # --- Keybindings ---
 keybind = shift+enter=text:\x1b\r
