@@ -1,6 +1,7 @@
 # --- Fonts & Text ---
 font-family = "Maple Mono NF CN"
 font-size = 20
+font-thicken = true
 
 # --- Appearance & Theme ---
 theme = token-dark
@@ -45,6 +46,11 @@ scrollback-limit = 25000000
 # --- Keybindings ---
 keybind = shift+enter=text:\x1b\r
 # Basic Split Screen
-keybind = cmd+d=new_split:right
-keybind = cmd+shift+enter=toggle_split_zoom
+#keybind = cmd+d=new_split:right
+#keybind = cmd+shift+enter=toggle_split_zoom
 keybind = cmd+shift+f=toggle_split_zoom
+keybind = cmd+shift+h=goto_split:left
+keybind = cmd+shift+j=goto_split:down
+keybind = cmd+shift+k=goto_split:up
+keybind = cmd+shift+l=goto_split:right
+keybind = global:cmd+grave_accent=toggle_quick_terminal

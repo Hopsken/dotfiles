@@ -5,14 +5,7 @@
   "defaultThinkingLevel": "high",
   "editorPaddingX": 0,
   "doubleEscapeAction": "tree",
-  "packages": [
-    "git:github.com/pasky/chrome-cdp-skill",
-    "npm:pi-mcp-adapter",
-    "npm:pi-powerline-footer",
-    "npm:nowledge-mem-pi",
-    "git:github.com/Hopsken/pi-extensions",
-    "git:github.com/Hopsken/pi-subagents"
-  ],
+  "packages": ["npm:pi-powerline-footer@0.4.11"],
   "powerline": "default",
   "quietStartup": true
 }
