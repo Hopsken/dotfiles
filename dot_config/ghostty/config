@@ -18,6 +18,7 @@ window-save-state = always
 window-theme = auto
 initial-window = true
 quit-after-last-window-closed = true
+confirm-close-surface = false
 
 # --- Cursor ---
 cursor-style = block
