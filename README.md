@@ -24,5 +24,26 @@ The scripts expect the following to be available (or they will be installed):
 
 - `git`, `curl`, `zsh`, `tmux`
 
+## 🧩 Local Zsh Completions
+
+Machine-specific CLI completions can be cached without adding the CLI itself to chezmoi.
+Declare them in `~/.zshrc.local`:
+
+```zsh
+zsh-cache-completion hermes hermes completion zsh
+```
+
+The generated completion is stored under:
+
+```text
+${XDG_CACHE_HOME:-$HOME/.cache}/zsh/completions/_hermes
+```
+
+Refresh all declared local completion caches:
+
+```zsh
+zsh-refresh-completion-cache
+```
+
 ---
 *Zzzzt! Managed with the help of Rotom.*
