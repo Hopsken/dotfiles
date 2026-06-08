@@ -1,6 +1,7 @@
 [tools]
 node = "lts"
 pnpm = "latest"
+usage = "latest"
 
 [settings]
 experimental = false

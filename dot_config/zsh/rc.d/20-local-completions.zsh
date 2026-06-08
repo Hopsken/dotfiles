@@ -5,12 +5,12 @@
 # Refresh all declared local completions:
 #   zsh-refresh-completion-cache
 
-ZSH_LOCAL_COMPLETION_DIR="${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/completions"
+ZSH_LOCAL_COMPLETION_DIR="$XDG_CACHE_HOME/zsh/completions"
 [[ -d "$ZSH_LOCAL_COMPLETION_DIR" ]] || mkdir -p "$ZSH_LOCAL_COMPLETION_DIR"
 
 fpath=(
   "$ZSH_LOCAL_COMPLETION_DIR"
-  "${XDG_CONFIG_HOME:-${HOME}/.config}/zsh/completions"
+  "$XDG_CONFIG_HOME/zsh/completions"
   $fpath
 )
 typeset -U fpath
@@ -59,3 +59,7 @@ zsh-refresh-completion-cache() {
     zsh-cache-completion --force "$name" "${spec[@]}"
   done
 }
+
+if [[ -s "$ZSH_LOCAL_COMPLETION_DIR/_mise" ]] || command -v usage &>/dev/null; then
+  zsh-cache-completion mise mise completion zsh
+fi
