@@ -17,6 +17,7 @@ brew "git-delta"     # Syntax-highlighting pager for git and diff
 brew "git-flow-next" # Modern implementation of Git-flow
 brew "git-lfs"       # Versioning large files
 brew "git-open"      # Open GitHub webpages from terminal
+brew "lazygit"       # TUI for Git
 brew "eza"           # Modern ls
 brew "bat"           # Modern cat
 brew "jq"            # JSON processor

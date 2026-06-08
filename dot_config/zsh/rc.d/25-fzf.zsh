@@ -10,7 +10,7 @@ export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git --color=always'
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --icons --color=always {}'"
 
 # Shell integration: CTRL-T (files), ALT-C (dirs), CTRL-R (history) — requires fzf >= 0.48.0
-(( $+commands[fzf] )) && eval "$(fzf --zsh)"
+(( $+commands[fzf] )) && eval "$(fzf --zsh 2>/dev/null)"
 
 # fzf-tab — replaces zsh's default completion menu with fzf
 # Both cd and zoxide previews consolidated here to avoid duplication with 90-zoxide.zsh

@@ -4,4 +4,4 @@ alias yolo="claude --dangerously-skip-permissions"
 
 alias cm="chezmoi"
 alias cma="chezmoi apply"
-alias cm="chezmoi diff"
+alias cmz="chezmoi diff"

@@ -1,5 +1,8 @@
 # Interactive Shell Configuration
 
+# Load system-wide zshrc if it exists
+[[ -f /etc/zshrc ]] && source /etc/zshrc
+
 # 1. Load secret environment variables
 [[ -f "$HOME/.config/zsh/.secret" ]] && source "$HOME/.config/zsh/.secret"
 

@@ -1,3 +1,6 @@
+# Bash-like word boundaries: stop at /.-= etc
+WORDCHARS='_'
+
 #####################
 # ZINIT             #
 #####################
