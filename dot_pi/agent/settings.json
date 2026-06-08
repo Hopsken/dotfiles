@@ -7,5 +7,6 @@
   "doubleEscapeAction": "tree",
   "packages": ["npm:pi-powerline-footer@0.4.11"],
   "powerline": "default",
-  "quietStartup": true
+  "quietStartup": true,
+  "shellPath": "/bin/zsh"
 }

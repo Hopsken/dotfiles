@@ -22,15 +22,8 @@ zinit ice as"command" from"gh-r" \
     atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
-# Volta — Node.js version manager (binary from GitHub Releases)
-local _volta_bpick
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  _volta_bpick="volta-*-macos.tar.gz"
-else
-  _volta_bpick="volta-*-linux.tar.gz"
+# mise — runtime version manager (fallback for Linux without brew)
+if [[ "$(uname -s)" != "Darwin" ]] && ! command -v mise &>/dev/null; then
+  zinit ice from"gh-r" as"command" bpick"mise-*-linux-x64.tar.gz" pick"mise/bin/mise"
+  zinit light jdx/mise
 fi
-zinit ice from"gh-r" as"command" bpick"$_volta_bpick" \
-    atclone"mkdir -p \"$VOLTA_HOME/bin\" && cp -f volta volta-shim volta-migrate \"$VOLTA_HOME/bin/\" && \"$VOLTA_HOME/bin/volta\" setup 2>/dev/null" \
-    atpull"%atclone" \
-    pick"/dev/null"
-zinit light volta-cli/volta

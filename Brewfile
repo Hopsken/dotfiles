@@ -8,7 +8,7 @@
 brew "go"            # Go
 brew "rust"          # Rust (Cargo)
 brew "uv"            # Python package
-brew "volta"         # JavaScript Tool Manager
+brew "mise"          # Runtime version manager
 
 
 # --- CLI Productivity ---
