@@ -9,16 +9,6 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-ran
 export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git --color=always'
 export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --icons --color=always {}'"
 
-# Shell integration: CTRL-T (files), ALT-C (dirs), CTRL-R (history) — requires fzf >= 0.48.0
-(( $+commands[fzf] )) && eval "$(fzf --zsh 2>/dev/null)"
-
-# fzf-tab — replaces zsh's default completion menu with fzf
-# Both cd and zoxide previews consolidated here to avoid duplication with 90-zoxide.zsh
-zinit wait lucid light-mode for \
-    atload" zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -G \$realpath'
-            zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -G \$realpath'" \
-    Aloxaf/fzf-tab
-
 # Find in files with live preview (requires rg + bat)
 fif() {
   [[ $# -eq 0 ]] && return
