@@ -23,13 +23,17 @@ fi
 # 4. mise (runtime version manager)
 command -v mise &>/dev/null && eval "$(mise activate zsh)"
 
-# 5. Bun
+# 5. pnpm global bin
+export PNPM_HOME="${PNPM_HOME:-$XDG_DATA_HOME/pnpm}"
+[[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
+
+# 6. Bun
 export BUN_INSTALL="$HOME/.bun"
 [[ -d "$BUN_INSTALL/bin" ]] && export PATH="$BUN_INSTALL/bin:$PATH"
 
-# 6. uv / local bin
+# 7. uv / local bin
 export PATH="$HOME/.local/bin:$PATH"
 
-# 7. OrbStack
+# 8. OrbStack
 [[ -d "$HOME/.orbstack/bin" ]] && export PATH="$HOME/.orbstack/bin:$PATH"
 # TODO: add orbstack completions
