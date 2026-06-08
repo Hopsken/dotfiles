@@ -25,7 +25,7 @@ command -v mise &>/dev/null && eval "$(mise activate zsh)"
 
 # 5. pnpm global bin
 export PNPM_HOME="${PNPM_HOME:-$XDG_DATA_HOME/pnpm}"
-[[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
+[[ -d "$PNPM_HOME/bin" ]] && export PATH="$PNPM_HOME/bin:$PATH"
 
 # 6. Bun
 export BUN_INSTALL="$HOME/.bun"
