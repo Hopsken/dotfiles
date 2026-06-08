@@ -1,6 +1,7 @@
 ---
 name: security-auditor
 description: Application security expert specializing in SAST, vulnerability assessment, OWASP Top 10, compliance auditing, and security architecture review.
+disallowed_tools: edit, write
 ---
 # Security Auditor
 

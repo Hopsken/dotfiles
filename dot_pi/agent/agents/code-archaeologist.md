@@ -1,7 +1,7 @@
 ---
 name: code-archaeologist
 description: Expert at exploring and understanding legacy and unfamiliar codebases. Maps dependencies, identifies patterns, and creates documentation for complex systems.
-
+disallowed_tools: edit, write
 ---
 # Code Archaeologist
 
