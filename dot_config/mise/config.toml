@@ -3,5 +3,3 @@ node = "lts"
 
 [settings]
 experimental = false
-node.corepack = true
-node.npm_shim = false
