@@ -1,12 +1,32 @@
 {
-  "lastChangelogVersion": "0.66.1",
+  "lastChangelogVersion": "0.78.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.4",
-  "defaultThinkingLevel": "high",
+  "defaultModel": "gpt-5.5",
+  "defaultThinkingLevel": "medium",
   "editorPaddingX": 0,
   "doubleEscapeAction": "tree",
-  "packages": ["npm:pi-powerline-footer@0.4.11"],
+  "packages": [
+    "npm:pi-powerline-footer",
+    {
+      "source": "npm:@plannotator/pi-extension",
+      "skills": []
+    },
+    "npm:pi-mcp-adapter",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-i18n",
+    "npm:pi-web-access",
+    "npm:@narumitw/pi-goal",
+    "npm:@tintinweb/pi-subagents"
+  ],
   "powerline": "default",
   "quietStartup": true,
-  "shellPath": "/bin/zsh"
+  "enabledModels": [
+    "fireworks/accounts/fireworks/models/kimi-k2p6",
+    "openai-codex/gpt-5.5",
+    "openai-codex/gpt-5.3-codex"
+  ],
+  "theme": "dark",
+  "terminal": {
+    "showTerminalProgress": true
+  }
 }
