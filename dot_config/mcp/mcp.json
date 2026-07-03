@@ -2,7 +2,16 @@
   "mcpServers": {
     "chrome-devtools": {
       "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+      "args": ["-y", "chrome-devtools-mcp@latest"],
+      "directTools": true
+    },
+    "skillpack": {
+      "lifecycle": "eager",
+      "url": "https://skills.hopsken.com/mcp",
+      "auth": "bearer",
+      "bearerTokenEnv": "SKILLPACK_API_KEY",
+      "directTools": true,
+      "exposeResources": false
     }
   }
 }

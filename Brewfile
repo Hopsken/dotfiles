@@ -25,7 +25,7 @@ brew "fzf"           # Fuzzy search
 brew "fd"            # Modern find
 brew "ripgrep"       # Modern grep
 brew "lazygit"       # TUI for Git
-brew "try-rs"        # Sandbox commands before running them
+brew "try-rs"        # Temporary experiment workspace manager
 brew "gh"            # GitHub CLI
 brew "tmux"          # Terminal multiplexer
 brew "mole"          # Deep clean and optimize your Mac
