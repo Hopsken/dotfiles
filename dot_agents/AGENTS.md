@@ -45,9 +45,9 @@
 
 ## Skills (mandatory)
 
-If Skillpack MCP is available, ALWAYS list skills from it before replying anything.
+At the beginning, if Skillpack MCP is available, ALWAYS list skills from it to be aware of skills available.
 
-If a skill matches or is even partially relevant to your task, you MUST load it first and follow its instructions.
+Before replying, scan the available skills. If a skill matches or is even partially relevant to your task, you MUST load it first and follow its instructions.
 
 Err on the side of loading — it is always better to have context you don't need than to miss critical steps, pitfalls, or established workflows.
 
