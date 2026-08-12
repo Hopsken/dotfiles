@@ -1,10 +1,10 @@
 # --- Fonts & Text ---
 font-family = "Maple Mono NF CN"
-font-size = 20
+font-size = 16
 font-thicken = true
 
 # --- Appearance & Theme ---
-theme = token-dark
+theme = Everforest Dark Hard
 macos-icon = xray
 background-opacity = 0.85
 background-blur-radius = 40
