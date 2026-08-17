@@ -61,5 +61,7 @@ if (( $+commands[try-rs] )); then
     compadd -a dirs
   }
 
-  compdef _try_rs_complete try-rs try
+  zinit ice wait"1" lucid id-as"_try-rs-completion" \
+    atload'compdef _try_rs_complete try-rs try'
+  zinit light zdharma-continuum/null
 fi
