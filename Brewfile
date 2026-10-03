@@ -4,10 +4,9 @@
 # Installed auto trigger on chezmoi apply via script: .chezmoiscripts/run_onchange_before_install-packages.sh
 # ==========================================
 
-#--- Core Runtimes ---
-brew "go"            # Go
-brew "rust"          # Rust (Cargo)
-brew "uv"            # Python package
+#--- Runtime manager ---
+# Language toolchains (node, go, rust, uv, ...) are managed by mise:
+# see dot_config/mise/config.toml
 brew "mise"          # Runtime version manager
 
 
@@ -24,7 +23,6 @@ brew "jq"            # JSON processor
 brew "fzf"           # Fuzzy search
 brew "fd"            # Modern find
 brew "ripgrep"       # Modern grep
-brew "lazygit"       # TUI for Git
 brew "try-rs"        # Temporary experiment workspace manager
 brew "gh"            # GitHub CLI
 brew "tmux"          # Terminal multiplexer

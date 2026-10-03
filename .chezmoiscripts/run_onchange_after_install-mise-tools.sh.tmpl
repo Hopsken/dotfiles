@@ -1,0 +1,12 @@
+#!/bin/bash
+# mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+set -euo pipefail
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+if ! command -v mise &>/dev/null; then
+  echo "mise not found, skipping tool install"
+  exit 0
+fi
+
+mise install
