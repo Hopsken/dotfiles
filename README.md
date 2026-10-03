@@ -13,10 +13,11 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Hopsken
 ## 🛠 Included Configurations
 
 - **Shell**: `zsh` managed by `zinit` for asynchronous plugin loading.
-- **Prompt**: `pure` (the beautiful and fast prompt).
+- **Prompt**: `starship`.
 - **Terminal Multiplexer**: `tmux` with `catppuccin` theme and `tpm` plugin manager.
 - **Tools**: `zoxide`, `fzf-tab`, `fast-syntax-highlighting`, and more.
-- **Git**: Base `.gitconfig` with performance-oriented defaults.
+- **Packages**: CLIs and apps via `Brewfile`; language toolchains (node, go, rust, uv) via `mise`.
+- **Git**: Global ignore (`~/.config/git/ignore`).
 
 ## 📦 Requirements
 
