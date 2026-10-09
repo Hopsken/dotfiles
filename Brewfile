@@ -32,3 +32,10 @@ brew "mole"          # Deep clean and optimize your Mac
 cask "font-maple-mono-nf-cn"
 cask "ghostty"
 cask "zed"
+
+# Casks — apps & CLIs
+cask "1password-cli"
+cask "chatgpt"
+cask "claude-code@latest"
+cask "codex"
+cask "orbstack"

@@ -4,7 +4,12 @@ Managed by [chezmoi](https://www.chezmoi.io/).
 
 ## 🚀 Quick Start
 
-One-line installation for both macOS and Linux:
+```bash
+brew install chezmoi
+chezmoi init --apply Hopsken
+```
+
+Without Homebrew (e.g. Linux):
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Hopsken

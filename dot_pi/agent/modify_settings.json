@@ -1,5 +1,6 @@
-{
-  "lastChangelogVersion": "0.78.1",
+{{- /* chezmoi:modify-template */ -}}
+{{- /* Settings come entirely from this template; only lastChangelogVersion (written by pi at runtime) is kept from the existing file. */ -}}
+{{- $managed := `{
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "defaultThinkingLevel": "medium",
@@ -29,4 +30,8 @@
   "terminal": {
     "showTerminalProgress": true
   }
-}
+}` | fromJson -}}
+{{- $current := dict -}}
+{{- if .chezmoi.stdin }}{{ $current = fromJson .chezmoi.stdin }}{{ end -}}
+{{- if hasKey $current "lastChangelogVersion" }}{{ $managed = set $managed "lastChangelogVersion" $current.lastChangelogVersion }}{{ end -}}
+{{- toPrettyJson $managed }}
