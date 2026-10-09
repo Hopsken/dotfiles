@@ -1,8 +1,13 @@
+# Pin a version prefix for tools that write project artifacts (lockfiles) or
+# break across majors; bump deliberately. Float the rest.
 [tools]
-node = "lts"
+go = "latest"
+node = "24"
+rust = "stable"
+uv = "0.12"
 "npm:@antfu/ni" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
-pnpm = "latest"
+pnpm = "11"
 usage = "latest"
 
 [settings]

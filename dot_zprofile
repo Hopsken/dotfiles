@@ -14,14 +14,13 @@ fi
 # 2. Rust (Cargo)
 [[ -d "$HOME/.cargo/bin" ]] && export PATH="$HOME/.cargo/bin:$PATH"
 
-# 3. Go
-if command -v go &>/dev/null || [[ -d "$HOME/.go/bin" ]]; then
-  export GOPATH="${GOPATH:-$HOME/.go}"
-  export PATH="$GOPATH/bin:$PATH"
-fi
+# 3. Go (toolchain installed by mise; GOPATH holds `go install` binaries)
+export GOPATH="${GOPATH:-$HOME/.go}"
+[[ -d "$GOPATH/bin" ]] && export PATH="$GOPATH/bin:$PATH"
 
-# 4. mise (runtime version manager)
-command -v mise &>/dev/null && eval "$(mise activate zsh)"
+# 4. mise shims — for non-interactive/IDE login shells.
+# Interactive shells get full activation in rc.d/05-mise.zsh.
+command -v mise &>/dev/null && eval "$(mise activate zsh --shims)"
 
 # 5. pnpm global bin
 export PNPM_HOME="${PNPM_HOME:-$XDG_DATA_HOME/pnpm}"
