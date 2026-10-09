@@ -27,3 +27,4 @@ zoxide = "latest"
 
 [settings]
 experimental = false
+fetch_remote_versions_cache = "2d"
