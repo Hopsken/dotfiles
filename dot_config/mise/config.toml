@@ -9,6 +9,9 @@ uv = "0.12"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 pnpm = "11"
 usage = "latest"
+agent-browser = "latest"
+ffmpeg = "latest"
+yazi = "latest"
 
 [settings]
 experimental = false
