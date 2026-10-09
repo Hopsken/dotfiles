@@ -1,6 +1,9 @@
 alias try="try-rs"
 alias to="tmux new-session -A -s"
 alias yolo="claude --dangerously-skip-permissions"
+alias ls="eza --color=auto"
+alias pn="pnpm"
+alias lg="lazygit"
 
 alias cm="chezmoi"
 alias cma="chezmoi apply"

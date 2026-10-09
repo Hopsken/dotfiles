@@ -5,27 +5,23 @@
 # ==========================================
 
 #--- Runtime manager ---
-# Language toolchains (node, go, rust, uv, ...) are managed by mise:
-# see dot_config/mise/config.toml
+# Development toolchains and CLIs (node, go, rust, uv, fzf, ripgrep, tmux, ...)
+# are managed by mise: see dot_config/mise/config.toml. Keep a tool here only
+# when mise's registry lacks it or it must be on the global PATH.
 brew "mise"          # Runtime version manager
 
-
-# --- CLI Productivity ---
+#--- Git and integrations ---
+# git invokes these directly (also from GUI clients that never see mise's PATH),
+# and `gh auth setup-git` writes gh's absolute path into the git config.
 brew "git"           # Version control
 brew "git-delta"     # Syntax-highlighting pager for git and diff
 brew "git-flow-next" # Modern implementation of Git-flow
 brew "git-lfs"       # Versioning large files
 brew "git-open"      # Open GitHub webpages from terminal
-brew "lazygit"       # TUI for Git
-brew "eza"           # Modern ls
-brew "bat"           # Modern cat
-brew "jq"            # JSON processor
-brew "fzf"           # Fuzzy search
-brew "fd"            # Modern find
-brew "ripgrep"       # Modern grep
-brew "try-rs"        # Temporary experiment workspace manager
 brew "gh"            # GitHub CLI
-brew "tmux"          # Terminal multiplexer
+
+#--- Not in the mise registry ---
+brew "try-rs"        # Temporary experiment workspace manager
 brew "mole"          # Deep clean and optimize your Mac
 
 # Casks — fonts & terminal

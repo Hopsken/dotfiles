@@ -21,14 +21,14 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply Hopsken
 - **Prompt**: `starship`.
 - **Terminal Multiplexer**: `tmux` with `catppuccin` theme and `tpm` plugin manager.
 - **Tools**: `zoxide`, `fzf-tab`, `fast-syntax-highlighting`, and more.
-- **Packages**: CLIs and apps via `Brewfile`; language toolchains (node, go, rust, uv) via `mise`.
+- **Packages**: language toolchains (node, go, rust, uv) and shell CLIs via `mise`; apps, fonts and git tooling via `Brewfile`.
 - **Git**: Global ignore (`~/.config/git/ignore`).
 
 ## 📦 Requirements
 
 The scripts expect the following to be available (or they will be installed):
 
-- `git`, `curl`, `zsh`, `tmux`
+- `git`, `curl`, `zsh`
 
 ## 🧩 Local Zsh Completions
 

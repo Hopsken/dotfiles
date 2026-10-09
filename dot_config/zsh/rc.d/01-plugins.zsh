@@ -16,7 +16,7 @@ zinit snippet OMZL::clipboard.zsh
 zinit ice wait"0a" lucid
 zinit snippet OMZL::correction.zsh
 
-zinit ice wait"0a" lucid atload"alias ..='cd ..'; alias ls='ls -G'"
+zinit ice wait"0a" lucid atload"alias ..='cd ..'"
 zinit snippet OMZL::directories.zsh
 
 zinit ice wait"0a" lucid
@@ -29,9 +29,6 @@ zinit snippet OMZL::grep.zsh
 
 zinit ice wait"0a" lucid atload"alias gfh='git commit -a --fixup HEAD'"
 zinit snippet OMZP::git
-
-zinit ice wait"0a" lucid
-zinit snippet OMZP::command-not-found
 
 zinit ice wait"0a" lucid
 zinit snippet OMZP::kubectl

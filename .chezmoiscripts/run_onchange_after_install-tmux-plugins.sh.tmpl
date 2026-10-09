@@ -1,0 +1,24 @@
+#!/bin/bash
+# tmux.conf hash: {{ include "dot_config/tmux/tmux.conf" | sha256sum }}
+# Bootstrap TPM and install every plugin declared in tmux.conf. Sorts after
+# install-mise-tools, so a mise-installed tmux is available on first apply.
+set -euo pipefail
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+plugins_dir="$HOME/.config/tmux/plugins"
+tpm_dir="$plugins_dir/tpm"
+
+if [[ ! -d "$tpm_dir/.git" ]]; then
+  mkdir -p "$plugins_dir"
+  git clone https://github.com/tmux-plugins/tpm "$tpm_dir"
+fi
+
+tmux_bin="$(command -v tmux || mise which tmux 2>/dev/null || true)"
+if [[ -z "$tmux_bin" ]]; then
+  echo "tmux not found, skipping tmux plugin install"
+  exit 0
+fi
+
+PATH="$(dirname "$tmux_bin"):$PATH" TMUX_PLUGIN_MANAGER_PATH="$plugins_dir/" \
+  "$tpm_dir/bin/install_plugins"

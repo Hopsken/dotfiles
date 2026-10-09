@@ -13,5 +13,17 @@ agent-browser = "latest"
 ffmpeg = "latest"
 yazi = "latest"
 
+# Shell CLIs; short names mostly resolve to the aqua backend (prebuilt binaries).
+# Verify with: mise registry <tool>
+bat = "latest"
+eza = "latest"
+fd = "latest"
+fzf = "latest"
+jq = "latest"
+lazygit = "latest"
+ripgrep = "latest"
+tmux = "latest"
+zoxide = "latest"
+
 [settings]
 experimental = false
