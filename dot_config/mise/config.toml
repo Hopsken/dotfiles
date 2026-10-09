@@ -1,20 +1,21 @@
 # Pin a version prefix for tools that write project artifacts (lockfiles) or
 # break across majors; bump deliberately. Float the rest.
 [tools]
+# core, depended by mise
+usage = "latest"
+
+# language toolchains
 go = "latest"
-node = "24"
 rust = "stable"
 uv = "0.12"
-"npm:@antfu/ni" = "latest"
-"npm:@earendil-works/pi-coding-agent" = "latest"
+node = "24"
 pnpm = "11"
-usage = "latest"
+
+# cli tools
+# Verify with: mise registry <tool>
 agent-browser = "latest"
 ffmpeg = "latest"
 yazi = "latest"
-
-# Shell CLIs; short names mostly resolve to the aqua backend (prebuilt binaries).
-# Verify with: mise registry <tool>
 bat = "latest"
 eza = "latest"
 fd = "latest"
@@ -24,6 +25,14 @@ lazygit = "latest"
 ripgrep = "latest"
 tmux = "latest"
 zoxide = "latest"
+hunk = "latest"
+imagemagick = "latest"
+websocat = "latest"
+
+#npm backend
+"npm:@antfu/ni" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+"npm:@playwright/cli" = "latest"
 
 [settings]
 experimental = false
