@@ -12,21 +12,21 @@ File are using chezmoi file naming conventions.
 
 Modular structure loaded by `dot_zshrc` → `dot_config/zsh/rc.d/` in numeric order:
 
-| File | Purpose |
-|------|---------|
-| `00-zinit.zsh` | zinit bootstrap, tmux/key-bindings, starship prompt, mise fallback on Linux |
-| `01-plugins.zsh` | OMZ libs/plugins (deferred) |
-| `02-completions.zsh` | zsh-completions + single deferred compinit |
-| `03-ui.zsh` | fzf shell integration, fzf-tab, autosuggestions, syntax highlighting (wait 1, after compinit) |
-| `05-history.zsh` | Keep commands longer than `HIST_MAX_CMD_LENGTH` out of `$HISTFILE` |
-| `05-mise.zsh` | `mise activate` for interactive shells |
-| `10-ai-functions.zsh` | Wrappers for AI CLIs (Claude, Codex) |
-| `20-local-completions.zsh` | Cached completions for machine-local CLIs |
-| `21-exe-completions.zsh` | ssh host completion for exe.dev VMs |
-| `25-fzf.zsh` | fzf options and helper functions |
-| `30-aliases.zsh` | Aliases |
-| `90-zoxide.zsh` | zoxide (smart `cd`) shell integration for the mise-installed binary |
-| `91-try-rs.zsh` | try-rs shell integration (cached `try-rs --setup-stdout zsh`) |
+| File                       | Purpose                                                                                       |
+| -------------------------- | --------------------------------------------------------------------------------------------- |
+| `00-zinit.zsh`             | zinit bootstrap, tmux/key-bindings, starship prompt, mise fallback on Linux                   |
+| `01-plugins.zsh`           | OMZ libs/plugins (deferred)                                                                   |
+| `02-completions.zsh`       | zsh-completions + single deferred compinit                                                    |
+| `03-ui.zsh`                | fzf shell integration, fzf-tab, autosuggestions, syntax highlighting (wait 1, after compinit) |
+| `05-history.zsh`           | Keep commands longer than `HIST_MAX_CMD_LENGTH` out of `$HISTFILE`                            |
+| `05-mise.zsh`              | `mise activate` for interactive shells                                                        |
+| `10-ai-functions.zsh`      | Wrappers for AI CLIs (Claude, Codex)                                                          |
+| `20-local-completions.zsh` | Cached completions for machine-local CLIs                                                     |
+| `21-exe-completions.zsh`   | ssh host completion for exe.dev VMs                                                           |
+| `25-fzf.zsh`               | fzf options and helper functions                                                              |
+| `30-aliases.zsh`           | Aliases                                                                                       |
+| `90-zoxide.zsh`            | zoxide (smart `cd`) shell integration for the mise-installed binary                           |
+| `91-try-rs.zsh`            | try-rs shell integration (cached `try-rs --setup-stdout zsh`)                                 |
 
 `dot_zprofile` sets PATH and loads mise shims for login shells. Secrets (API keys) go in `~/.config/zsh/.secret`; machine-local config goes in `~/.zshrc.local`. Both are sourced by `dot_zshrc` but excluded from this repo.
 

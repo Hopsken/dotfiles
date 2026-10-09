@@ -1,19 +1,21 @@
 # --- Fonts & Text ---
 font-family = "Maple Mono NF CN"
-font-size = 16
+font-size = 18
 font-thicken = true
 
 # --- Appearance & Theme ---
 theme = Everforest Dark Hard
 macos-icon = xray
-background-opacity = 0.85
-background-blur-radius = 40
+background-opacity = 0.8
+background-blur-radius = 12
 window-padding-x = 8
 window-padding-y = 8
 macos-titlebar-style = transparent
 shell-integration-features = no-cursor, sudo, ssh-terminfo, ssh-env
 
 # --- Window Behavior ---
+window-width = 10000
+window-height = 10000
 window-save-state = always
 window-theme = auto
 initial-window = true
@@ -45,7 +47,17 @@ notify-on-command-finish = always
 scrollback-limit = 25000000
 
 # --- Keybindings ---
-keybind = shift+enter=text:\x1b\r
+# Needed by Pi Coding Agent
+keybind = alt+backspace=text:\x1b\x7f
+keybind = shift+enter=text:\n
+
+# Window & Split Management
+keybind = cmd+w=close_surface
+keybind = cmd+ctrl+arrow_down=resize_split:down,100
+keybind = cmd+ctrl+arrow_left=resize_split:left,100
+keybind = cmd+ctrl+arrow_right=resize_split:right,100
+keybind = cmd+ctrl+arrow_up=resize_split:up,100
+
 # Basic Split Screen
 #keybind = cmd+d=new_split:right
 #keybind = cmd+shift+enter=toggle_split_zoom
@@ -54,3 +66,4 @@ keybind = cmd+shift+h=goto_split:left
 keybind = cmd+shift+j=goto_split:down
 keybind = cmd+shift+k=goto_split:up
 keybind = cmd+shift+l=goto_split:right
+keybind = global:cmd+grave_accent=toggle_quick_terminal
